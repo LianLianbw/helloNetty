@@ -14,7 +14,6 @@ import java.io.*;
 3)通过这个我们就不用将response拆分成多个channel返回给请求端了。
 4)添加header描述length。这一步是很重要的一步，如果没有这一步，你会发现用postman发出请求之后就一直在刷新，
   因为http请求方不知道返回的数据到底有多长。channel读取完成之后需要输出缓冲流。如果没有这一步，你会发现postman同样会一直在刷新。*/
-
 public class HttpHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
     private AsciiString contentType = HttpHeaderValues.TEXT_PLAIN;
