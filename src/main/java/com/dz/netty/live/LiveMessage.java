@@ -5,8 +5,8 @@ package com.dz.netty.live;
  */
 public class LiveMessage {
 
-    static final byte TYPE_HEART = 1;
-    static final byte TYPE_MESSAGE = 2;
+    public static final byte TYPE_HEART = 1;
+    public static final byte TYPE_MESSAGE = 2;
 
     private byte type;
     private int length;

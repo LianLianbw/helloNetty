@@ -17,7 +17,7 @@ public class LongConnTest {
     private Logger logger = LoggerFactory.getLogger(LongConnTest.class);
 
     String host = "localhost";
-    int port = 8080;
+    int port = 8989;
 
     public void testLongConn() throws Exception {
         logger.debug("start");
@@ -30,7 +30,10 @@ public class LongConnTest {
                     byte[] input = new byte[64];
                     int readByte = socket.getInputStream().read(input);
                     logger.debug("readByte " + readByte);
+                    Thread.sleep(5000);
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
